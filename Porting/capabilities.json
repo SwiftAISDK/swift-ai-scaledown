@@ -1,0 +1,17 @@
+[
+  {
+    "providerID": "scaledown",
+    "upstreamPackage": "@ai-sdk/scaledown",
+    "factoryNames": [
+      "AIProviders.scaleDown"
+    ],
+    "capabilities": [
+      "decision",
+      "extraction"
+    ],
+    "files": false,
+    "skills": false,
+    "notes": "ScaleDown 3.0.1: native Decision V4 choice, boolean and score, plus Extraction V4 text and lists of text. x-api-key and SCALEDOWN_API_KEY, lazy async credentials, custom base URL/headers, PDF/JPEG/PNG/TIFF evidence, confidence/legend/cost metadata, strict response validation, UTF-8 byte offsets converted to verified UTF-16 sources and OCR file citations. Other extraction fields and model families are explicitly rejected; JS workflow serialization is outside Swift.",
+    "order": 61
+  }
+]

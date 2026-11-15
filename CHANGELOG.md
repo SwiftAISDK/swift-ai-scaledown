@@ -1,0 +1,6 @@
+# Changelog
+
+## 1.0.0
+
+- Add ScaleDown Decision and Extraction V4 APIs. Classify choices, booleans and scores; extract nullable text/list fields with confidence, UTF-16 source offsets and OCR file references. Supports lazy static/async/environment API keys, custom endpoints/headers, document inputs, upstream warnings and structured errors. All portable matching-release 3.0.1 upstream scenarios translated; JavaScript workflow serialization excluded. No paid/live checks. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.
+  Compatibility: Initial independent SwiftPM package 1.0.0. Requires swift-ai-core 1.4.0. Existing package selectors remain unchanged. JavaScript workflow/lifecycle-only exclusions and native representation differences are documented.

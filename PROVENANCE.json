@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "package": "swift-ai-scaledown",
+  "version": "1.0.0",
+  "releaseID": "weekly-upstream-20261115",
+  "source": {
+    "commit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "baseCommit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "workingTree": false,
+    "inputsSHA256": "5508ffc6347bffaed13fb29409eb856df9a7796d3ebdcb6f623d1e8871b52999"
+  },
+  "dependencies": [
+    {
+      "package": "swift-ai-core",
+      "from": "1.4.0"
+    }
+  ],
+  "changes": [
+    {
+      "id": "weekly-upstream-20261115",
+      "notes": "Add ScaleDown Decision and Extraction V4 APIs. Classify choices, booleans and scores; extract nullable text/list fields with confidence, UTF-16 source offsets and OCR file references. Supports lazy static/async/environment API keys, custom endpoints/headers, document inputs, upstream warnings and structured errors. All portable matching-release 3.0.1 upstream scenarios translated; JavaScript workflow serialization excluded. No paid/live checks. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.",
+      "compatibility": "Initial independent SwiftPM package 1.0.0. Requires swift-ai-core 1.4.0. Existing package selectors remain unchanged. JavaScript workflow/lifecycle-only exclusions and native representation differences are documented."
+    }
+  ],
+  "canonicalDirectory": "Packages/swift-ai-scaledown",
+  "upstream": [
+    {
+      "name": "@ai-sdk/scaledown",
+      "reviewedVersion": "3.0.1",
+      "ledgerKind": "provider",
+      "evidence": "Packages/swift-ai-scaledown/Porting/upstream-tests.json; ScaleDownDecisionUpstreamTests.swift; ScaleDownExtractionUpstreamTests.swift; ScaleDownNativeTests.swift",
+      "reviewStatus": "reviewed",
+      "archiveIntegrity": "sha512-EUK7RMN8b3yuJeH5E0uOKk1Hv2Tm2wH+xj1Vf0ESAJ9hrB5a38lt8Hzur019+1U3nroKv4MUxVICJ/tDV+pgSw==",
+      "sourceRef": "npm:@ai-sdk/scaledown@3.0.1",
+      "testRef": "8bc7652cdb13fc84722666eb93f45acd0d131eee",
+      "testRefRelationship": "matching-release",
+      "contractFamilies": [
+        "DecisionModelV4",
+        "ExtractionModelV4",
+        "ProviderV4"
+      ],
+      "contractReview": "All published portable Decision and Extraction provider runtime, request/response schemas and exact-release upstream scenarios reviewed and translated. JavaScript workflow serialization is excluded; Swift dictionary order and integral usage counts follow native contracts. No live-service verification."
+    }
+  ],
+  "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
+  "canonicalInputs": [
+    {
+      "canonicalPath": ".github/workflows/package-check.yml",
+      "sha256": "7ff448e130f7aed96c38accdf828b6d993997ebc5317358347e9a70a649e67ca"
+    },
+    {
+      "canonicalPath": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Package.swift",
+      "sha256": "06029dc45860a608f7c1f637da075b7af39d8cc91b60136b868e5edbfc06eb4c"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Porting/map.json",
+      "sha256": "023c851af1fd7786935f85795fb040a4f2ced508af42c0cbf12ecb881410e179"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/README.md",
+      "sha256": "0aae7b2f4623393435da2cfc465a9c3d7ae348be97ce9f17d12a4c8d3d0d1503"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownDecisionModel.swift",
+      "sha256": "4ef5d3facc8a9f902a8e1b209f3c294e60b5351229e5ddbf6925e55179f5a02e"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownExtractionModel.swift",
+      "sha256": "fbf9cad99aabf10f2d11cb27a2c14f12849f8cc9cc50b20187dee8504aff1482"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownProvider.swift",
+      "sha256": "58f0bb517bb0f63387bbdaf6b5199b8e2628ee4fce20b02667cb70e22b652629"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownState.swift",
+      "sha256": "9db361be23f79cf288e96b61fbfd8f0a722638d63369a1188a6237cee05a5ea7"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownValidation.swift",
+      "sha256": "704d3b8fbcb315673f219189b7810fb7413a4959fc0dc861ce967f5d292f1a12"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Tests/SwiftAIScaleDownTests/ScaleDownDecisionUpstreamTests.swift",
+      "sha256": "96545b9e17e854da42b6eaa507254170004642c122a1e0c9f3d6cb1c18945d61"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Tests/SwiftAIScaleDownTests/ScaleDownExtractionUpstreamTests.swift",
+      "sha256": "33ae3d4d738f599f1d3bf54790111e93b71d82b6994e43f98e2d71260f746c27"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Tests/SwiftAIScaleDownTests/ScaleDownNativeTests.swift",
+      "sha256": "f6dbeda5d5a6de09d47de7e4cf2402515c3b419e376d1004df2f6cda50ce8faf"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-scaledown/Tests/SwiftAIScaleDownTests/ScaleDownTestSupport.swift",
+      "sha256": "921efd2963482f5493eb2de3bbe80a2a496f803d02ec78e8bc13f320bbd4ba8f"
+    }
+  ]
+}
