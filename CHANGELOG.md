@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0
+## 1.1.0
 
-- Add ScaleDown Decision and Extraction V4 APIs. Classify choices, booleans and scores; extract nullable text/list fields with confidence, UTF-16 source offsets and OCR file references. Supports lazy static/async/environment API keys, custom endpoints/headers, document inputs, upstream warnings and structured errors. All portable matching-release 3.0.1 upstream scenarios translated; JavaScript workflow serialization excluded. No paid/live checks. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.
-  Compatibility: Initial independent SwiftPM package 1.0.0. Requires swift-ai-core 1.4.0. Existing package selectors remain unchanged. JavaScript workflow/lifecycle-only exclusions and native representation differences are documented.
+- Return an explicit empty list and empty item metadata from native extraction when no list items match. The core extraction facade normalizes it to a missing value. Reviewed npm: @ai-sdk/scaledown 3.0.1 to 3.0.3. Offline validation passed: node Scripts/test-packages.mjs (56 packages, 3672 owning tests and 1760 compatibility tests), generation, tooling, isolation, and version selection. See Docs/Archive/WeeklyUpstreamAudit20261122.md for retained gaps. Paid provider calls were skipped.
+  Compatibility: Low-level extraction callers can distinguish an empty list from a missing field. Requires SwiftAI Core 1.7.0 for facade normalization.

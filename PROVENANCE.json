@@ -1,45 +1,45 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-scaledown",
-  "version": "1.0.0",
-  "releaseID": "weekly-upstream-20261115",
+  "version": "1.1.0",
+  "releaseID": "weekly-upstream-20261122",
   "source": {
-    "commit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
-    "baseCommit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "commit": "73e28c7d4106338c3030bc36700c5922aeb2ebd9",
+    "baseCommit": "73e28c7d4106338c3030bc36700c5922aeb2ebd9",
     "workingTree": false,
-    "inputsSHA256": "5508ffc6347bffaed13fb29409eb856df9a7796d3ebdcb6f623d1e8871b52999"
+    "inputsSHA256": "5b64cfae284ecf9a081f1c08d5b5dff83915b3c57b62669a3408e51a52961cb5"
   },
   "dependencies": [
     {
       "package": "swift-ai-core",
-      "from": "1.4.0"
+      "from": "1.7.0"
     }
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261115",
-      "notes": "Add ScaleDown Decision and Extraction V4 APIs. Classify choices, booleans and scores; extract nullable text/list fields with confidence, UTF-16 source offsets and OCR file references. Supports lazy static/async/environment API keys, custom endpoints/headers, document inputs, upstream warnings and structured errors. All portable matching-release 3.0.1 upstream scenarios translated; JavaScript workflow serialization excluded. No paid/live checks. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.",
-      "compatibility": "Initial independent SwiftPM package 1.0.0. Requires swift-ai-core 1.4.0. Existing package selectors remain unchanged. JavaScript workflow/lifecycle-only exclusions and native representation differences are documented."
+      "id": "weekly-upstream-20261122",
+      "notes": "Return an explicit empty list and empty item metadata from native extraction when no list items match. The core extraction facade normalizes it to a missing value. Reviewed npm: @ai-sdk/scaledown 3.0.1 to 3.0.3. Offline validation passed: node Scripts/test-packages.mjs (56 packages, 3672 owning tests and 1760 compatibility tests), generation, tooling, isolation, and version selection. See Docs/Archive/WeeklyUpstreamAudit20261122.md for retained gaps. Paid provider calls were skipped.",
+      "compatibility": "Low-level extraction callers can distinguish an empty list from a missing field. Requires SwiftAI Core 1.7.0 for facade normalization."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-scaledown",
   "upstream": [
     {
       "name": "@ai-sdk/scaledown",
-      "reviewedVersion": "3.0.1",
+      "reviewedVersion": "3.0.3",
       "ledgerKind": "provider",
-      "evidence": "Packages/swift-ai-scaledown/Porting/upstream-tests.json; ScaleDownDecisionUpstreamTests.swift; ScaleDownExtractionUpstreamTests.swift; ScaleDownNativeTests.swift",
+      "evidence": "Packages/swift-ai-scaledown/Porting/upstream-tests.json; ScaleDownDecisionUpstreamTests.swift; ScaleDownExtractionUpstreamTests.swift; ScaleDownNativeTests.swift; 2026-11-22 delta: Docs/Archive/WeeklyUpstreamAudit20261122.json",
       "reviewStatus": "reviewed",
-      "archiveIntegrity": "sha512-EUK7RMN8b3yuJeH5E0uOKk1Hv2Tm2wH+xj1Vf0ESAJ9hrB5a38lt8Hzur019+1U3nroKv4MUxVICJ/tDV+pgSw==",
-      "sourceRef": "npm:@ai-sdk/scaledown@3.0.1",
-      "testRef": "8bc7652cdb13fc84722666eb93f45acd0d131eee",
+      "archiveIntegrity": "sha512-xDvmKX4rHSF3gg8SQbZrAvsvO6xE9hCEtelBNJkEiV6uw6Kbj7nW9sH6lTVZhGPUgQ3hgPkoa7h+nvQ93qFu6g==",
+      "sourceRef": "npm:@ai-sdk/scaledown@3.0.3",
+      "testRef": "3dad57f204c7332178d28c3467c7311875b66a3e",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "DecisionModelV4",
         "ExtractionModelV4",
         "ProviderV4"
       ],
-      "contractReview": "All published portable Decision and Extraction provider runtime, request/response schemas and exact-release upstream scenarios reviewed and translated. JavaScript workflow serialization is excluded; Swift dictionary order and integral usage counts follow native contracts. No live-service verification."
+      "contractReview": "2026-11-22: reviewed the published source and declarations and the matching-release test diffs. Native evidence and explicitly retained coverage gaps are in Docs/Archive/WeeklyUpstreamAudit20261122.json."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -62,7 +62,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-scaledown/README.md",
-      "sha256": "0aae7b2f4623393435da2cfc465a9c3d7ae348be97ce9f17d12a4c8d3d0d1503"
+      "sha256": "2a5b7a6d082f66ceb53ab150b9a190977364633822522380b6a3a0647c226d4b"
     },
     {
       "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownDecisionModel.swift",
@@ -70,11 +70,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownExtractionModel.swift",
-      "sha256": "fbf9cad99aabf10f2d11cb27a2c14f12849f8cc9cc50b20187dee8504aff1482"
+      "sha256": "29c44f7c3cf1b714d9a27225ac3f03082970f9592e9d75d5bc3374d51edf917c"
     },
     {
       "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownProvider.swift",
-      "sha256": "58f0bb517bb0f63387bbdaf6b5199b8e2628ee4fce20b02667cb70e22b652629"
+      "sha256": "6c74e5bfa1156d80afd133b8f9f42200184a101aa778f58db6b1f35310494aa8"
     },
     {
       "canonicalPath": "Packages/swift-ai-scaledown/Sources/SwiftAIScaleDown/ScaleDownState.swift",
@@ -86,11 +86,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-scaledown/Tests/SwiftAIScaleDownTests/ScaleDownDecisionUpstreamTests.swift",
-      "sha256": "96545b9e17e854da42b6eaa507254170004642c122a1e0c9f3d6cb1c18945d61"
+      "sha256": "ea60e891e1ce33ea1c18c2cd3e49364d7c12fae1c2e1fd6716e40fa7664f6f94"
     },
     {
       "canonicalPath": "Packages/swift-ai-scaledown/Tests/SwiftAIScaleDownTests/ScaleDownExtractionUpstreamTests.swift",
-      "sha256": "33ae3d4d738f599f1d3bf54790111e93b71d82b6994e43f98e2d71260f746c27"
+      "sha256": "ed942cb95e0d07d70aab57291a99a4cb12742d749a467d2c7966bfd1c3fe0309"
     },
     {
       "canonicalPath": "Packages/swift-ai-scaledown/Tests/SwiftAIScaleDownTests/ScaleDownNativeTests.swift",
